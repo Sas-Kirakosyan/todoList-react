@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+ import List from './components/List'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class mainTodo extends React.Component{
+constructor(props){
+  super(props)
+  this.state=({
+    terms: '',
+    items:[]
+  })
 }
 
-export default App;
+handleInput =(e)=>{
+this.setState({
+  terms: e.target.value
+  
+    })
+}
+submitHendle =(e)=>{
+  e.preventDefault();
+  this.setState({
+    terms:'',
+    items: [...this.state.items, this.state.terms]
+   
+  })
+}
+render(){
+  return(
+  <div className='container'>
+    <h1 className='h1'>My todo list</h1>
+    <form className="App" onSubmit={this.submitHendle} >
+     <input type="text" onChange={this.handleInput} value={this.state.terms} />
+     <button>Add</button>
+    </form>
+
+    <List items={this.state.items} />
+  </div>)
+  }
+}
+export default mainTodo;
+

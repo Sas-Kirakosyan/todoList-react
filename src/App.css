@@ -20,3 +20,24 @@
 .App-link {
   color: #09d3ac;
 }
+.li{
+  width: 250px;
+  list-style-type: none;
+  background: blue;
+  padding: 3px;
+  margin: 1px;
+  margin-left: 38%;
+  color: white;
+ 
+}
+.h1{
+  background: blue;
+  color: white;
+  margin:0;
+  
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  
+}
