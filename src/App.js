@@ -42,7 +42,7 @@ removeItem=(e)=>{
 render(){
   return(
   <div className='container'>
-    <h1 className='h1'>My todo list</h1>
+    <h1 className='h1'>My todo list app</h1>
    <form className="App">
        <input type="text" onChange={this.handleInput} value={this.state.text} />
        <button onClick={this.submitHendle}>Add</button>
